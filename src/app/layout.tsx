@@ -21,13 +21,29 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : undefined) ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+/** Public origin for absolute Open Graph URLs. Blank or malformed env values fall through to the next option. */
+function resolveSiteUrl(): URL {
+  const candidates = [
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL && `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`,
+    process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`,
+  ];
+  for (const raw of candidates) {
+    const value = raw?.trim();
+    if (!value) continue;
+    try {
+      return new URL(value.startsWith("http") ? value : `https://${value}`);
+    } catch {
+      // ignore and try the next candidate
+    }
+  }
+  return new URL("http://localhost:3000");
+}
+
+const siteUrl = resolveSiteUrl();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: siteUrl,
   title: {
     default: `${profile.name} | ${profile.role}`,
     template: `%s | ${profile.name}`,
@@ -49,7 +65,7 @@ export const metadata: Metadata = {
     type: "profile",
     title: `${profile.name} | ${profile.role}`,
     description: profile.summary,
-    url: siteUrl,
+    url: siteUrl.href,
     siteName: profile.name,
     images: [{ url: "/images/arellano-portrait.jpg", width: 1200, height: 1200, alt: profile.name }],
   },
