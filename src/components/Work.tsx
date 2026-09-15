@@ -42,7 +42,7 @@ export function Work() {
               <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
                 <RepoLink repo={p.repo} />
                 {p.repo.commits !== undefined && (
-                  <span className="font-mono text-[0.7rem] uppercase tracking-[0.1em] text-ink-faint">
+                  <span className="label text-ink-faint">
                     {p.repo.commits} commits · {p.repo.role}
                   </span>
                 )}
@@ -56,9 +56,9 @@ export function Work() {
           <Reveal className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="eyebrow">More contributions</p>
-              <h3 className="display mt-3 text-[clamp(1.6rem,3vw,2.2rem)]">Everything else under rgmc-apps</h3>
+              <h3 className="display mt-3 text-2xl">Everything else under rgmc-apps</h3>
             </div>
-            <p className="max-w-[44ch] text-[0.9rem] text-ink-muted">
+            <p className="max-w-[44ch] text-sm text-ink-muted">
               Private repositories are named but not linked. Excluded on purpose: legacy systems I did not author.
             </p>
           </Reveal>
@@ -69,19 +69,19 @@ export function Work() {
               if (!repos.length) return null;
               return (
                 <div key={cat} className="grid gap-6 lg:grid-cols-12">
-                  <h4 className="font-mono text-[0.72rem] uppercase tracking-[0.14em] text-brass lg:col-span-3 lg:pt-5">{cat}</h4>
+                  <h4 className="eyebrow lg:col-span-3 lg:pt-5">{cat}</h4>
                   <Stagger as="ul" className="divide-y divide-line lg:col-span-9">
                     {repos.map((r) => (
                       <Item as="li" key={r.name} className="grid gap-3 py-5 sm:grid-cols-[1fr_auto] sm:gap-6">
                         <div className="min-w-0">
                           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                            <h5 className="font-display text-[1.05rem] font-semibold tracking-tight">{r.name}</h5>
+                            <h5 className="font-display text-lg font-semibold tracking-tight">{r.name}</h5>
                             {r.commits !== undefined && (
-                              <span className="font-mono text-[0.66rem] uppercase tracking-[0.1em] text-ink-faint">{r.commits} commits</span>
+                              <span className="label text-ink-faint">{r.commits} commits</span>
                             )}
-                            {r.role && <span className="font-mono text-[0.66rem] uppercase tracking-[0.1em] text-ink-faint">· {r.role}</span>}
+                            {r.role && <span className="label text-ink-faint">· {r.role}</span>}
                           </div>
-                          <p className="mt-1.5 max-w-[62ch] text-[0.9rem] leading-relaxed text-ink-muted">{r.blurb}</p>
+                          <p className="mt-1.5 max-w-[62ch] text-sm leading-relaxed text-ink-muted">{r.blurb}</p>
                           <TechChips items={r.stack} className="mt-3" limit={7} />
                         </div>
                         <div className="sm:pt-1">

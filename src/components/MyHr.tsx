@@ -31,12 +31,12 @@ export function MyHr() {
         />
 
         <Reveal className="mt-14">
-          <p className="font-mono text-[0.68rem] uppercase tracking-[0.12em] text-ink-faint">Platform modules I worked around</p>
+          <p className="label text-ink-faint">Platform modules I worked around</p>
           <ul className="mt-4 flex flex-wrap gap-2">
             {myHrModules.map((m, i) => (
               <li
                 key={m}
-                className={`rounded-lg border px-3.5 py-2 font-display text-[0.92rem] font-semibold tracking-tight ${
+                className={`rounded-lg border px-3.5 py-2 font-display text-sm font-semibold tracking-tight ${
                   i < 3 ? "border-brass/60 bg-brass-soft text-ink" : "border-line-strong text-ink-muted"
                 }`}
               >
@@ -49,20 +49,20 @@ export function MyHr() {
         <Stagger as="div" className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-3">
           {myHrTeams.map((t, i) => (
             <Item as="article" key={t.team} className="flex flex-col bg-bg p-7 sm:p-8">
-              <p className="font-mono text-[0.66rem] uppercase tracking-[0.12em] text-brass">0{i + 1}</p>
-              <h3 className="display mt-3 text-[1.5rem]">{t.team}</h3>
-              <p className="mt-1 text-[0.82rem] text-ink-faint">
+              <p className="eyebrow">0{i + 1}</p>
+              <h3 className="display mt-3 text-xl">{t.team}</h3>
+              <p className="mt-1 text-sm text-ink-faint">
                 {t.size} · {t.role}
               </p>
-              <p className="mt-5 flex-1 text-pretty text-[0.93rem] leading-relaxed text-ink-muted">{t.work}</p>
+              <p className="mt-5 flex-1 text-pretty text-sm leading-relaxed text-ink-muted">{t.work}</p>
               <TechChips items={t.stack} className="mt-6" />
             </Item>
           ))}
         </Stagger>
 
         <Reveal className="mt-10 grid gap-6 rounded-2xl border border-line bg-bg p-7 sm:grid-cols-[auto_1fr] sm:items-center sm:gap-10 sm:p-8">
-          <p className="font-mono text-[0.68rem] uppercase tracking-[0.12em] text-ink-faint">Capstone, 2018</p>
-          <p className="text-[0.95rem] leading-relaxed text-ink-muted">
+          <p className="label text-ink-faint">Capstone, 2018</p>
+          <p className="text-base leading-relaxed text-ink-muted">
             Before MyHR there was <span className="font-medium text-ink">Human Resource Management System 4</span>, my university
             capstone: an HR system for PUP Quezon City faculty with payroll, compensation planning and HR analytics, built by a team of
             five on Java Spring MVC and MS SQL. I was its project manager.

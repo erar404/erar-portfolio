@@ -26,7 +26,7 @@ export function About() {
 
         <div className="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-10">
           <Reveal className="lg:col-span-7">
-            <div className="max-w-[64ch] space-y-5 text-pretty text-[1.02rem] leading-relaxed text-ink-muted">
+            <div className="max-w-[64ch] space-y-5 text-pretty text-base leading-relaxed text-ink-muted">
               <p>
                 I am a full-stack software engineer from Quezon City. I started in HR technology at Titanium Systems, where I spent
                 five years as a shared developer on MyHR, a payroll and timekeeping platform used by Philippine enterprises. That meant
@@ -48,8 +48,8 @@ export function About() {
             <dl className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-line pt-8 sm:grid-cols-4">
               {facts.map((f) => (
                 <div key={f.k}>
-                  <dt className="font-mono text-[0.66rem] uppercase tracking-[0.12em] text-ink-faint">{f.k}</dt>
-                  <dd className="mt-1.5 text-[0.9rem] font-medium leading-snug">{f.v}</dd>
+                  <dt className="label text-ink-faint">{f.k}</dt>
+                  <dd className="mt-1.5 text-sm font-medium leading-snug">{f.v}</dd>
                 </div>
               ))}
             </dl>
@@ -62,12 +62,12 @@ export function About() {
                 <ol className="mt-4 space-y-5">
                   {education.map((e) => (
                     <li key={e.school} className="grid grid-cols-[auto_1fr] gap-x-4">
-                      <span className="pt-1 font-mono text-[0.68rem] text-ink-faint">{e.period}</span>
+                      <span className="pt-1 font-mono text-xs text-ink-faint">{e.period}</span>
                       <div>
-                        <p className="font-display text-[1.02rem] font-semibold leading-tight tracking-tight">{e.degree}</p>
-                        <p className="mt-0.5 text-[0.88rem] text-ink-muted">{e.school}</p>
+                        <p className="font-display text-base font-semibold leading-tight tracking-tight">{e.degree}</p>
+                        <p className="mt-0.5 text-sm text-ink-muted">{e.school}</p>
                         {e.notes.length > 0 && (
-                          <ul className="mt-2.5 space-y-1.5 text-[0.84rem] leading-relaxed text-ink-muted">
+                          <ul className="mt-2.5 space-y-1.5 text-sm leading-relaxed text-ink-muted">
                             {e.notes.map((n) => (
                               <li key={n} className="flex gap-2">
                                 <span className="mt-[0.6em] size-1 shrink-0 rounded-full bg-brass" aria-hidden />
@@ -86,7 +86,7 @@ export function About() {
                 <h3 className="eyebrow">Languages</h3>
                 <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
                   {languages.map((l) => (
-                    <li key={l.name} className="text-[0.9rem]">
+                    <li key={l.name} className="text-sm">
                       <span className="font-medium">{l.name}</span>
                       <span className="text-ink-faint"> · {l.level}</span>
                     </li>

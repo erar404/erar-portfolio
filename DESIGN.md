@@ -20,10 +20,11 @@ Tokens (OKLCH):
 - --signal-green: oklch(0.75 0.14 150)
 
 ## Typography
-- Display: "Bricolage Grotesque" (Google Fonts) at weights 500 to 800, optical size axis. Wide, slightly quirky grotesque; industrial but friendly.
-- Body: "Geist" (Google Fonts) 400 to 600.
-- Mono labels: "Geist Mono" for tech-stack chips, dates and small metadata only.
-- Scale: 1.333 ratio. Body 1rem / 1.6. Headline clamp(2.6rem, 6vw, 5.5rem) with tight tracking (-0.03em).
+- One family for display and body: "Schibsted Grotesk" (Google Fonts), weights 400 body, 500 labels, 600 subheads, 700 display. A newspaper-grade grotesk: professional and dependable, with enough warmth to avoid corporate blandness.
+- Mono: "Source Code Pro" 400/500, reserved for technical metadata only (tech chips, dates, commit counts, handles).
+- Eyebrows and section labels use the sans at 600, uppercase, 0.08em tracking, not mono.
+- Scale (1.25 ratio): xs 0.75rem, sm 0.875rem, base 1rem / 1.65, lg 1.125rem, xl 1.375rem, then fluid clamps: 2xl 1.5 to 2.125rem (featured titles), 3xl 2 to 3.25rem (section headings), 4xl 2.75 to 5.25rem (hero).
+- Display letter-spacing -0.022em, line-height 1.02. Body letter-spacing 0.005em to compensate for light-on-dark.
 
 ## Spacing
 Section padding clamp(5rem, 12vh, 9rem). Content max width 1180px. Long-form text max 68ch.

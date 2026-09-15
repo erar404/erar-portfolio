@@ -1,24 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
+import { Schibsted_Grotesk, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/data/profile";
 
-const bricolage = Bricolage_Grotesque({
+const schibsted = Schibsted_Grotesk({
   subsets: ["latin"],
-  variable: "--font-bricolage",
+  variable: "--font-schibsted",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
-const geist = Geist({
+const sourceCode = Source_Code_Pro({
   subsets: ["latin"],
-  variable: "--font-geist",
+  variable: "--font-source-code",
   display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-  display: "swap",
+  weight: ["400", "500"],
 });
 
 /** Public origin for absolute Open Graph URLs. Blank or malformed env values fall through to the next option. */
@@ -86,7 +82,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${geist.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${schibsted.variable} ${sourceCode.variable}`}>
       <body className="min-h-dvh bg-bg text-ink antialiased">{children}</body>
     </html>
   );

@@ -7,8 +7,8 @@ export function Footer() {
     <footer className="border-t border-line bg-bg-sunken/60">
       <div className="wrap flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="font-display text-[1.05rem] font-semibold tracking-tight">{profile.name}</p>
-          <p className="mt-1 text-[0.82rem] text-ink-faint">
+          <p className="font-display text-lg font-semibold tracking-tight">{profile.name}</p>
+          <p className="mt-1 text-sm text-ink-faint">
             {profile.role} · {profile.location} · © {year}
           </p>
         </div>
@@ -27,7 +27,7 @@ export function Footer() {
             </li>
           ))}
         </ul>
-        <p className="font-mono text-[0.66rem] uppercase tracking-[0.12em] text-ink-faint">Built with Next.js, Tailwind CSS and Framer Motion</p>
+        <p className="label text-ink-faint">Built with Next.js, Tailwind CSS and Framer Motion</p>
       </div>
     </footer>
   );

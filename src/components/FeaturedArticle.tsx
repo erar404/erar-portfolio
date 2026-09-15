@@ -23,13 +23,13 @@ export function FeaturedArticle({ kicker, title, description, bullets, visual, f
       </div>
       <Reveal className={`lg:col-span-6 ${flip ? "lg:order-1" : ""}`}>
         <p className="eyebrow">{kicker}</p>
-        <h3 className="display mt-3 text-[clamp(1.7rem,3.4vw,2.4rem)]">{title}</h3>
-        <div className="mt-5 max-w-[58ch] space-y-4 text-pretty text-[0.97rem] leading-relaxed text-ink-muted">
+        <h3 className="display mt-3 text-2xl">{title}</h3>
+        <div className="mt-5 max-w-[58ch] space-y-4 text-pretty text-base leading-relaxed text-ink-muted">
           {description.map((d) => (
             <p key={d}>{d}</p>
           ))}
         </div>
-        <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2 text-[0.86rem]">
+        <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
           {bullets.map((b) => (
             <li key={b} className="flex gap-2">
               <span className="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-brass" aria-hidden />

@@ -39,13 +39,13 @@ export function Hero() {
             {profile.role} at {profile.currently.company}
           </motion.p>
 
-          <motion.h1 variants={rise} className="display mt-6 text-[clamp(2.9rem,8vw,6.2rem)]">
+          <motion.h1 variants={rise} className="display mt-6 text-4xl">
             Erwin Roy
             <br />
             <span className="text-brass">Arellano</span>
           </motion.h1>
 
-          <motion.p variants={rise} className="mt-7 max-w-[56ch] text-pretty text-[1.08rem] leading-relaxed text-ink-muted sm:text-[1.15rem]">
+          <motion.p variants={rise} className="mt-7 max-w-[56ch] text-pretty text-lg leading-relaxed text-ink-muted sm:text-lg">
             I build the software that runs businesses day to day: ERP integrations, field apps, internal portals and the middleware
             in between. Six years across HR tech, retail and manufacturing in the Philippines.
           </motion.p>
@@ -58,7 +58,7 @@ export function Hero() {
             <a href="#contact" className="btn btn-secondary">
               Get in touch
             </a>
-            <span className="ml-1 inline-flex items-center gap-1.5 text-[0.85rem] text-ink-faint">
+            <span className="ml-1 inline-flex items-center gap-1.5 text-sm text-ink-faint">
               <PinIcon className="size-4" />
               {profile.location}
             </span>
@@ -71,14 +71,14 @@ export function Hero() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2.5 text-[0.88rem] text-ink-muted transition-colors hover:text-ink"
+                  className="group inline-flex items-center gap-2.5 text-sm text-ink-muted transition-colors hover:text-ink"
                 >
                   <span className="grid size-8 place-items-center rounded-full border border-line-strong transition-colors group-hover:border-brass group-hover:text-brass">
                     <Icon className="size-4" />
                   </span>
                   <span className="flex flex-col leading-tight">
                     <span className="font-medium">{label}</span>
-                    <span className="font-mono text-[0.68rem] text-ink-faint">{handle}</span>
+                    <span className="font-mono text-xs text-ink-faint">{handle}</span>
                   </span>
                 </a>
               </li>
@@ -106,8 +106,8 @@ export function Hero() {
             />
           </div>
           <div className="absolute -bottom-5 left-5 rounded-xl border border-line-strong bg-bg-raised px-4 py-3 shadow-[0_20px_50px_-20px_oklch(0_0_0/0.8)]">
-            <p className="font-mono text-[0.62rem] uppercase tracking-[0.12em] text-ink-faint">Currently</p>
-            <p className="mt-0.5 font-display text-[0.95rem] font-semibold tracking-tight">
+            <p className="label text-ink-faint">Currently</p>
+            <p className="mt-0.5 font-display text-base font-semibold tracking-tight">
               {profile.currently.company}
               <span className="text-ink-faint"> · since {profile.currently.since}</span>
             </p>

@@ -70,15 +70,15 @@ export function Contact() {
                       <Icon className="size-4" />
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block font-mono text-[0.64rem] uppercase tracking-[0.12em] text-ink-faint">{label}</span>
-                      <span className="block truncate text-[0.95rem] font-medium">{value}</span>
+                      <span className="block label text-ink-faint">{label}</span>
+                      <span className="block truncate text-base font-medium">{value}</span>
                     </span>
                     <ArrowIcon className="size-4 shrink-0 text-ink-faint transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brass" />
                   </a>
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-[0.86rem] leading-relaxed text-ink-faint">
+            <p className="mt-6 text-sm leading-relaxed text-ink-faint">
               Based in {profile.location}, GMT+8. Available for remote work and on-site engagements in Metro Manila.
             </p>
           </Reveal>
@@ -123,7 +123,7 @@ export function Contact() {
                     <motion.p
                       key="sent"
                       role="status"
-                      className="text-[0.9rem] text-signal"
+                      className="text-sm text-signal"
                       initial={{ opacity: 0, y: 6 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
@@ -136,7 +136,7 @@ export function Contact() {
                     <motion.p
                       key="error"
                       role="alert"
-                      className="text-[0.9rem] text-[oklch(0.78_0.14_25)]"
+                      className="text-sm text-[oklch(0.78_0.14_25)]"
                       initial={{ opacity: 0, y: 6 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
@@ -170,12 +170,12 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <label htmlFor={name} className="mb-2 block font-mono text-[0.66rem] uppercase tracking-[0.12em] text-ink-muted">
+      <label htmlFor={name} className="mb-2 block label text-ink-muted">
         {label}
       </label>
       {children}
       {error && (
-        <p className="mt-1.5 text-[0.8rem] text-[oklch(0.78_0.14_25)]" id={`${name}-error`}>
+        <p className="mt-1.5 text-sm text-[oklch(0.78_0.14_25)]" id={`${name}-error`}>
           {error}
         </p>
       )}

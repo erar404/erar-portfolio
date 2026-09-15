@@ -18,9 +18,9 @@ export function SectionHeader({ index, label, title, lede, align = "split" }: Pr
           <span className="h-px w-8 bg-brass/60" aria-hidden />
           {label}
         </p>
-        <h2 className="display mt-5 text-[clamp(2.1rem,5vw,3.6rem)]">{title}</h2>
+        <h2 className="display mt-5 text-3xl">{title}</h2>
       </div>
-      {lede && <div className={`max-w-[60ch] text-pretty text-[1.02rem] leading-relaxed text-ink-muted ${align === "split" ? "lg:col-span-5 lg:self-end" : ""}`}>{lede}</div>}
+      {lede && <div className={`max-w-[60ch] text-pretty text-base leading-relaxed text-ink-muted ${align === "split" ? "lg:col-span-5 lg:self-end" : ""}`}>{lede}</div>}
     </Reveal>
   );
 }

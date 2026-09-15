@@ -32,7 +32,7 @@ export function Projects() {
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <RepoLink repo={r} tone="ink" />
                       {r.commits !== undefined && (
-                        <span className="font-mono text-[0.66rem] uppercase tracking-[0.1em] text-ink-faint">{r.commits} commits</span>
+                        <span className="label text-ink-faint">{r.commits} commits</span>
                       )}
                     </div>
                     <TechChips items={r.stack} className="mt-3" />

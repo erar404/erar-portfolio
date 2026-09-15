@@ -70,7 +70,7 @@ export function Nav() {
               <a
                 href={`#${s.id}`}
                 data-active={active === s.id}
-                className={`underline-grow text-[0.82rem] font-medium tracking-wide transition-colors ${
+                className={`underline-grow text-sm font-medium tracking-wide transition-colors ${
                   active === s.id ? "text-ink" : "text-ink-muted hover:text-ink"
                 }`}
               >
@@ -80,7 +80,7 @@ export function Nav() {
           ))}
         </ul>
 
-        <a href="#contact" className="btn btn-primary hidden !py-2.5 !text-[0.82rem] md:inline-flex">
+        <a href="#contact" className="btn btn-primary hidden !py-2.5 !text-sm md:inline-flex">
           Start a conversation
         </a>
 
@@ -128,7 +128,7 @@ export function Nav() {
                     className="flex items-center justify-between py-3 font-display text-lg font-semibold tracking-tight text-ink"
                   >
                     {s.label}
-                    <span className="font-mono text-[0.7rem] text-ink-faint">0{sections.findIndex((x) => x.id === s.id) + 1}</span>
+                    <span className="font-mono text-xs text-ink-faint">0{sections.findIndex((x) => x.id === s.id) + 1}</span>
                   </a>
                 </li>
               ))}

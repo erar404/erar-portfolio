@@ -15,9 +15,29 @@
   --color-brass-ink: oklch(0.20 0.05 80);
   --color-signal: oklch(0.76 0.14 150);
 
-  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: var(--font-schibsted), "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-schibsted), "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-source-code), ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
+
+  /* Type scale: 1.25 ratio, fixed rem for reading sizes, fluid clamp for display sizes. */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.55;
+  --text-base: 1rem;
+  --text-base--line-height: 1.65;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.375rem;
+  --text-xl--line-height: 1.25;
+  --text-2xl: clamp(1.5rem, 1.1rem + 1.8vw, 2.125rem);
+  --text-2xl--line-height: 1.12;
+  --text-3xl: clamp(2rem, 1.2rem + 3.4vw, 3.25rem);
+  --text-3xl--line-height: 1.04;
+  --text-4xl: clamp(2.75rem, 1.6rem + 5.6vw, 5.25rem);
+  --text-4xl--line-height: 0.98;
+
+  --tracking-label: 0.08em;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -72,6 +92,11 @@ body {
   background-color: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--text-base--line-height);
+  letter-spacing: 0.005em; /* light-on-dark compensation */
+  font-kerning: normal;
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -105,17 +130,26 @@ body::before {
     padding-block: clamp(5rem, 12vh, 9rem);
   }
   .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-label);
     text-transform: uppercase;
     color: var(--color-brass);
+  }
+  .label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
   }
   .display {
     font-family: var(--font-display);
     font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 0.98;
+    letter-spacing: -0.022em;
+    line-height: 1.02;
     text-wrap: balance;
   }
   .chip {
@@ -124,10 +158,11 @@ body::before {
     gap: 0.35rem;
     border: 1px solid var(--color-line-strong);
     border-radius: 999px;
-    padding: 0.28rem 0.66rem;
+    padding: 0.26rem 0.62rem;
     font-family: var(--font-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--color-ink-muted);
     white-space: nowrap;
@@ -146,7 +181,8 @@ body::before {
     border-radius: 999px;
     padding: 0.8rem 1.35rem;
     font-weight: 600;
-    font-size: 0.92rem;
+    font-size: var(--text-sm);
+    letter-spacing: 0.01em;
     line-height: 1;
     cursor: pointer;
     transition:
@@ -231,7 +267,7 @@ body::before {
     background: var(--color-bg-sunken);
     padding: 0.85rem 1rem;
     color: var(--color-ink);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     transition:
       border-color 200ms var(--ease-out-quart),
       box-shadow 200ms var(--ease-out-quart);
