@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.env
+.env.local
+.env.*.local
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+npm-debug.log*
+
+# source assets kept out of the public repo (contain personal details / 3 MB original)
+Arellano-Resume-2026.pdf
+arellano-pic.JPG
